@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Intern Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white px-6 py-3 flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">Intern Portal</h1>
+    <div class="space-x-4">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="login.html" class="hover:underline">Login</a>
+      <a href="dashboard.html" class="hover:underline">Dashboard</a>
+      <a href="leaderboard.html" class="hover:underline">Leaderboard</a>
+      <a href="contact.html" class="hover:underline font-semibold text-blue-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Contact Section -->
+  <main class="max-w-lg mx-auto p-8 bg-gray-800 mt-10 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold text-center mb-6 text-white">📬 Contact Us</h2>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden text-green-400 text-center font-semibold mb-4">
+      ✅ We got your details! We'll reach out to you soon.
+    </div>
+
+    <form id="contactForm" class="space-y-5" action="#" method="POST">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-300">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="e.g., Shivam Kakade"
+               class="mt-1 w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-300">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="e.g., you@example.com"
+               class="mt-1 w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-300">Your Message</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."
+                  class="mt-1 w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white resize-none placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+        Send Message
+      </button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent actual form submission
+      successMessage.classList.remove("hidden");
+      form.reset(); // Clear the form
+    });
+  </script>
+</body>
+</html>

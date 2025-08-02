@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Intern Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white h-screen flex items-center justify-center">
+  <div class="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md">
+    <h2 class="text-3xl font-bold mb-6 text-center">Intern Portal Login</h2>
+    <form class="space-y-4" id="loginForm">
+      <input id="email" type="text" placeholder="Username or Email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+      <input id="password" type="password" placeholder="Password" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+      <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Login</button>
+      <p class="text-sm text-gray-400 mt-2 text-center">* Use any credentials. Your first login will act as sign-up.</p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Check if user already exists
+      const storedUser = JSON.parse(localStorage.getItem("user_" + email));
+
+      if (storedUser) {
+        // Login case
+        if (storedUser.password === password) {
+          alert("Login successful!");
+          localStorage.setItem("loggedInUser", email); // Store current session
+          window.location.href = "dashboard.html";
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      } else {
+        // Sign-up case
+        localStorage.setItem("user_" + email, JSON.stringify({ email, password }));
+        alert("Account created successfully. Logged in!");
+        localStorage.setItem("loggedInUser", email);
+        window.location.href = "dashboard.html";
+      }
+    });
+  </script>
+</body>
+</html>

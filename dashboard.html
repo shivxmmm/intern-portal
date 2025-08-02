@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Intern Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="dashboard.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-bold text-blue-400">Intern Portal</h1>
+    <div class="space-x-6 text-sm sm:text-base">
+      <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+      <a href="login.html" class="hover:text-blue-300 transition">Login</a>
+      <a href="dashboard.html" class="font-semibold text-blue-300 underline">Dashboard</a>
+      <a href="leaderboard.html" class="hover:text-blue-300 transition">Leaderboard</a>
+      <a href="contact.html" class="hover:text-blue-300 transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard -->
+  <main class="max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-xl mt-10 p-8">
+    <h2 class="text-3xl font-bold mb-6 text-center">👤 Intern Dashboard</h2>
+
+    <div class="space-y-6 text-lg text-gray-200">
+      <div>Name: <span id="internName" class="text-white font-semibold">Loading...</span></div>
+      <div>Referral Code: <span id="referralCode" class="text-white font-semibold">Loading...</span></div>
+      <div>Donations Raised: <span id="donationsRaised" class="text-green-400 font-bold">Loading...</span></div>
+    </div>
+
+    <!-- Rewards / Unlockables Section -->
+    <section class="mt-10">
+      <h3 class="text-2xl font-bold mb-4 text-blue-300">🎁 Rewards & Unlockables</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-gray-700 rounded-lg p-4 shadow-md">
+          <h4 class="text-xl font-semibold text-white">Bronze Badge</h4>
+          <p class="text-sm text-gray-300">Awarded for raising ₹500+ in donations.</p>
+        </div>
+        <div class="bg-gray-700 rounded-lg p-4 shadow-md">
+          <h4 class="text-xl font-semibold text-white">Silver Badge</h4>
+          <p class="text-sm text-gray-300">Awarded for referring 3+ new donors.</p>
+        </div>
+        <div class="bg-gray-700 rounded-lg p-4 shadow-md">
+          <h4 class="text-xl font-semibold text-white">Gold Badge</h4>
+          <p class="text-sm text-gray-300">Awarded for ₹2000+ donations raised.</p>
+        </div>
+        <div class="bg-gray-700 rounded-lg p-4 shadow-md">
+          <h4 class="text-xl font-semibold text-white">Exclusive Webinar Access</h4>
+          <p class="text-sm text-gray-300">Unlock special webinars after 5 successful referrals.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
